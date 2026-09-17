@@ -73,7 +73,7 @@ class Book extends LibraryItem with Borrowable {
 
   @override
   String describe() =>
-      '📖 ${author.name} — "$title" (${genre.label}, $year, $pages p.)';
+      ' ${author.name} — "$title" (${genre.label}, $year, $pages p.)';
 
   @override
   String toString() =>
@@ -103,7 +103,7 @@ class Magazine extends LibraryItem {
   });
 
   @override
-  String describe() => '📰 "$title" issue #$issue ($year)';
+  String describe() => ' "$title" issue #$issue ($year)';
 }
 
 mixin Borrowable on LibraryItem {
@@ -120,7 +120,7 @@ class Ghost implements LibraryItem {
   const Ghost({required this.title, required this.year});
 
   @override
-  String describe() => '👻 "$title" ($year)';
+  String describe() => ' "$title" ($year)';
 
   @override
   bool get isOld => year < 2000;
